@@ -12,7 +12,7 @@ local c = {
   base08 = "#ff7b72", -- red
   base09 = "#d29922", -- orange
   base0A = "#e3b341", -- yellow
-  base0B = "#7ee787", -- green :3
+  base0B = "#7ee787", -- green
   base0C = "#79c0ff", -- cyan
   base0D = "#a5d6ff", -- light blue
   base0E = "#d2a8ff", -- purple
@@ -22,8 +22,6 @@ local c = {
 local function hi(group, opts)
   vim.api.nvim_set_hl(0, group, opts)
 end
-
-vim.o.termguicolors = true
 
 -- UI
 hi("Normal", { fg = c.base05, bg = c.base00 })
@@ -60,48 +58,44 @@ hi("PmenuSbar", { bg = c.base01 })
 hi("PmenuThumb", { bg = c.base03 })
 
 -- Syntax
-hi("Comment", { fg = c.base03, italic = true })
-hi("Constant", { fg = c.base09 })
-hi("String", { fg = c.base0B })
-hi("Character", { fg = c.base0B })
-hi("Number", { fg = c.base09 })
-hi("Boolean", { fg = c.base09 })
-hi("Identifier", { fg = c.base08 })
+hi("Identifier", { fg = c.base05 })
 hi("Function", { fg = c.base0D })
 hi("Statement", { fg = c.base08 })
+hi("Keyword", { fg = c.base08, bold = true })
 hi("Conditional", { fg = c.base08 })
 hi("Repeat", { fg = c.base08 })
-hi("Keyword", { fg = c.base0E, bold = true })
 hi("Operator", { fg = c.base0C })
-hi("PreProc", { fg = c.base0A })
+hi("Boolean", { fg = c.base09 })
+hi("Number", { fg = c.base09 })
+hi("String", { fg = c.base0B })
+hi("Comment", { fg = c.base03, italic = true })
 hi("Type", { fg = c.base0A })
+hi("PreProc", { fg = c.base0A })
 hi("Special", { fg = c.base0C })
 hi("Underlined", { underline = true })
 
 -- Treesitter
-hi("@string", { fg = c.base0B })
-hi("@function", { fg = c.base0D })
-hi("@function.builtin", { fg = c.base0D })
-hi("@keyword", { fg = c.base0E })
-hi("@keyword.operator", { fg = c.base0C })
-hi("@comment", { fg = c.base03, italic = true })
-hi("@field", { fg = c.base05 })
 hi("@variable", { fg = c.base05 })
 hi("@variable.builtin", { fg = c.base08 })
 hi("@parameter", { fg = c.base05 })
+hi("@field", { fg = c.base05 })
+hi("@function", { fg = c.base0D })
+hi("@function.builtin", { fg = c.base08 })
+hi("@keyword", { fg = c.base08, bold = true })
+hi("@keyword.operator", { fg = c.base0C })
 hi("@type", { fg = c.base0A })
-hi("@type.builtin", { fg = c.base0A })
+hi("@type.builtin", { fg = c.base09 })
+hi("@string", { fg = c.base0B })
+hi("@number", { fg = c.base09 })
+hi("@comment", { fg = c.base03, italic = true })
 hi("@punctuation", { fg = c.base04 })
+hi("@attribute", { fg = c.base0F, italic = true })
+hi("@macro", { fg = c.base08 })
 hi("@text.title", { fg = c.base0E, bold = true })
 hi("@text.strong", { fg = c.base05, bold = true })
 hi("@text.emphasis", { fg = c.base04, italic = true })
 hi("@text.uri", { fg = c.base0C, underline = true })
 hi("@text.literal", { fg = c.base0B })
-
--- Diff
-hi("DiffAdd", { fg = c.base0B })
-hi("DiffChange", { fg = c.base0A })
-hi("DiffDelete", { fg = c.base08 })
 
 -- Spelling
 hi("SpellBad", { undercurl = true, sp = c.base08 })
@@ -186,3 +180,20 @@ hi("LazyReasonPlugin", { fg = c.base09 })
 hi("LazyProp", { fg = c.base03 })
 hi("LazyH1", { fg = c.base0C, bold = true })
 hi("LazyH2", { fg = c.base0A, bold = true })
+
+-- Diff
+hi("DiffAdd", { fg = c.base0B, bg = c.base01 })
+hi("DiffDelete", { fg = c.base08, bg = c.base02 })
+hi("DiffChange", { fg = c.base0E, bg = c.base01 })
+hi("DiffText", { fg = c.base00, bg = c.base03 })
+
+hi("diffAdded", { fg = c.base0B })
+hi("diffRemoved", { fg = c.base08 })
+hi("diffChanged", { fg = c.base0E })
+hi("diffFile", { fg = c.base0D })
+hi("diffIndexLine", { fg = c.base0A })
+hi("diffSubname", { fg = c.base0D })
+
+-- Gitsigns
+hi("GitSignsAdd", { fg = c.base0B })
+hi("GitSignsDelete", { fg = c.base08 })
