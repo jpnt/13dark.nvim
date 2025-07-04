@@ -7,7 +7,7 @@
 
 - 🖤 Pitch black background (`#000000`)
 - 🟢 Green strings (`#7ee787`)
-- 🔷 Blue functions, 🔮 purple keywords
+- 🔷 Blue functions, 🥵 red keywords
 - 🧠 Treesitter, LSP, CMP, Telescope, NvimTree, Lazy supported. Add more/fix if needed
 - 🎯 Single-file colorscheme, no bloat!
 
